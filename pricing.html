@@ -1,8 +1,457 @@
-<nav class="menu">
-  <a href="#services">Services</a>
-  <a href="#about">About</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Pricing — DP Glass & Railing Udaipur. Transparent starting prices for glass railing, SS railing, glass partitions and shower glass.">
+<title>Pricing | DP Glass & Railing Udaipur</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23071827'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' fill='%2361d8ff' text-anchor='middle'>DP</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#071827;--navy2:#0d2b43;--blue:#1c8de2;--cyan:#61d8ff;--ink:#10283c;--muted:#4a5d6e;--line:rgba(15,43,67,.12);--white:#fff;--bg:#f6f9fc;--gold:#c9a86a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:Inter,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1180px;margin:auto;padding:0 22px}
+
+/* NAV (shared) */
+header{position:fixed;top:0;left:0;width:100%;z-index:50;padding:16px 0;background:rgba(7,24,39,.94);backdrop-filter:blur(16px);box-shadow:0 8px 30px rgba(0,0,0,.12)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:-.5px}
+.brand-mark{width:44px;height:44px;border:1px solid rgba(255,255,255,.35);border-radius:12px;display:grid;place-items:center;font-size:20px;background:rgba(255,255,255,.08)}
+.brand span{display:block;font-size:11px;letter-spacing:1.8px;font-weight:600;color:#bfeaff}
+.menu{display:flex;align-items:center;gap:30px;color:#fff;font-size:14px;font-weight:600}
+.menu a{opacity:.9;transition:.2s}.menu a:hover,.menu a.active{color:var(--cyan);opacity:1}
+.nav-btn{padding:11px 17px;border:1px solid rgba(255,255,255,.35);border-radius:999px;color:#fff!important;display:inline-flex;align-items:center;gap:7px}
+.nav-btn:hover{background:rgba(97,216,255,.12);border-color:var(--cyan)}
+.mobile-menu{display:none;color:#fff;font-size:26px;background:none;border:0;cursor:pointer;padding:4px 8px}
+.mobile-nav{display:none;position:fixed;top:76px;left:0;width:100%;background:rgba(7,24,39,.98);backdrop-filter:blur(16px);flex-direction:column;padding:20px 22px;gap:16px;z-index:49;border-bottom:1px solid rgba(255,255,255,.1)}
+.mobile-nav.open{display:flex}
+.mobile-nav a{color:#fff;font-weight:600;font-size:15px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mobile-nav a:last-child{border:0}
+
+/* PAGE HERO */
+.page-hero{background:linear-gradient(90deg,rgba(5,18,30,.95),rgba(5,18,30,.78)),url('dp-glass-railing-banner.png') center/cover no-repeat;color:#fff;padding:150px 0 70px;text-align:center}
+.page-hero .kicker{color:#aeeaff;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;display:inline-block}
+.page-hero .kicker:after{content:"";display:block;width:34px;height:2px;background:linear-gradient(90deg,var(--cyan),#aeeaff);margin:6px auto 0;border-radius:2px}
+.page-hero h1{font-family:"Playfair Display",serif;font-size:clamp(36px,5vw,58px);line-height:1.1;margin:14px 0;letter-spacing:-.5px}
+.page-hero p{color:#d4e2ec;font-size:16px;max-width:620px;margin:auto}
+
+/* PRICING */
+.pricing-section{padding:70px 0 40px}
+.section-head{text-align:center;max-width:640px;margin:0 auto 44px}
+.section-head .kicker{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;display:inline-block}
+.section-head .kicker:after{content:"";display:block;width:34px;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));margin:6px auto 0;border-radius:2px}
+.section-head h2{font-family:"Playfair Display",serif;font-size:clamp(30px,4vw,46px);color:var(--navy);line-height:1.1;margin-top:8px;letter-spacing:-.5px}
+.section-head p{color:var(--muted);font-size:15px;margin-top:12px}
+
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.price-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 26px;position:relative;transition:.3s;display:flex;flex-direction:column}
+.price-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(10,45,75,.1);border-color:rgba(28,141,226,.3)}
+.price-card.featured{border:2px solid var(--blue);box-shadow:0 20px 50px rgba(28,141,226,.15)}
+.price-card.featured:before{content:"MOST POPULAR";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#1595ed,#51d5ff);color:#031521;font-size:10px;font-weight:900;letter-spacing:1.2px;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.price-icon{width:52px;height:52px;border-radius:14px;background:#edf8ff;display:grid;place-items:center;margin-bottom:16px;color:var(--blue)}
+.price-icon svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.price-card h3{font-size:19px;color:var(--navy);margin-bottom:4px}
+.price-card .desc{font-size:13px;color:var(--muted);margin-bottom:18px;min-height:38px}
+.price-tag{display:flex;align-items:baseline;gap:6px;margin-bottom:6px}
+.price-tag .currency{font-size:18px;font-weight:700;color:var(--navy)}
+.price-tag .amount{font-family:"Playfair Display",serif;font-size:40px;font-weight:700;color:var(--navy);line-height:1}
+.price-tag .unit{font-size:13px;color:var(--muted);font-weight:600}
+.price-note{font-size:12px;color:var(--muted);margin-bottom:20px;padding-bottom:20px;border-bottom:1px dashed var(--line)}
+.features{list-style:none;margin-bottom:24px;flex:1}
+.features li{font-size:13px;color:var(--ink);padding:6px 0;display:flex;align-items:flex-start;gap:8px}
+.features li:before{content:"✓";color:var(--blue);font-weight:900;flex-shrink:0}
+.price-card .btn{width:100%;margin-top:auto}
+
+/* COMPARISON TABLE */
+.compare-section{padding:50px 0 70px;background:var(--bg)}
+.table-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--line);background:#fff}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{padding:16px 18px;text-align:left;font-size:14px;border-bottom:1px solid var(--line)}
+th{background:var(--navy);color:#fff;font-weight:700;font-size:13px;letter-spacing:.5px}
+td:first-child{font-weight:700;color:var(--navy)}
+tr:last-child td{border-bottom:0}
+tr:hover td{background:#f8fbfe}
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.3px}
+.badge-blue{background:#e6f4ff;color:#0b6fb8}
+.badge-green{background:#e6f9ef;color:#0e8a4a}
+.badge-gold{background:#fbf3e2;color:#9a7a2e}
+
+/* FACTORS */
+.factors{padding:70px 0}
+.factor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.factor{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.factor-num{font-size:12px;color:var(--blue);font-weight:900;letter-spacing:1px}
+.factor h3{font-size:16px;color:var(--navy);margin:10px 0 4px}
+.factor p{font-size:13px;color:var(--muted)}
+
+/* FAQ */
+.faq-section{padding:20px 0 80px}
+.faq{max-width:800px;margin:0 auto}
+.faq-item{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;background:#fff;overflow:hidden}
+.faq-q{width:100%;background:none;border:0;padding:18px 22px;text-align:left;font-family:inherit;font-size:15px;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q:hover{color:var(--blue)}
+.faq-q .plus{font-size:20px;color:var(--blue);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q .plus{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 22px}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:18px}
+.faq-a p{font-size:14px;color:var(--muted)}
+
+/* CTA */
+.cta-band{background:linear-gradient(120deg,#0a2941,#0b486b);color:#fff;padding:60px 0}
+.cta-band .wrap{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.cta-band h2{font-family:"Playfair Display",serif;font-size:clamp(26px,3vw,36px);color:#fff}
+.cta-band p{color:#c4d8e5;font-size:14px;margin-top:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 23px;border-radius:10px;font-weight:800;font-size:14px;transition:.25s;border:0;cursor:pointer;font-family:inherit}
+.btn-wa{background:#25D366;color:#fff;box-shadow:0 10px 30px rgba(37,211,102,.28)}
+.btn-wa:hover{transform:translateY(-2px);background:#1fb857}
+.btn-primary{background:linear-gradient(135deg,#1595ed,#51d5ff);color:#031521;box-shadow:0 10px 30px rgba(40,180,245,.25)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--navy);border:1px solid var(--line)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+
+/* FOOTER */
+footer{background:#04111d;color:#aebfcb;padding:34px 0 20px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.footer-brand{color:#fff;font-size:21px;font-weight:800;margin-bottom:6px}
+.footer-grid h4{color:#fff;margin-bottom:12px;font-size:14px}
+.footer-grid p,.footer-grid a{font-size:13px;color:#aebfcb}
+.footer-grid a{display:block;margin:6px 0;transition:.2s}
+.footer-grid a:hover{color:var(--cyan)}
+.copyright{border-top:1px solid rgba(255,255,255,.08);margin-top:28px;padding-top:18px;font-size:12px;text-align:center}
+
+/* FLOATING WA */
+.wa-float{position:fixed;bottom:22px;right:22px;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(37,211,102,.45);z-index:48;transition:.25s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;fill:currentColor}
+
+@media(max-width:900px){
+  .pricing-grid{grid-template-columns:1fr 1fr}
+  .factor-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:850px){
+  .menu{display:none}.mobile-menu{display:block}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .container{padding:0 17px}
+  .pricing-grid,.factor-grid,.footer-grid{grid-template-columns:1fr}
+  .price-card.featured{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">DP</div>
+      <div>DP GLASS & RAILING<span>UDAIPUR • RAJASTHAN</span></div>
+    </a>
+    <nav class="menu">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="pricing.html" class="active">Pricing</a>
+      <a href="index.html#process">Process</a>
+      <a class="nav-btn" href="https://wa.me/91XXXXXXXXXX?text=Hi%20DP%20Glass%20%26%20Railing%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noopener">Get Quote</a>
+    </nav>
+    <button class="mobile-menu" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html#services">Services</a>
+  <a href="index.html#about">About</a>
   <a href="gallery.html">Gallery</a>
   <a href="pricing.html">Pricing</a>
-  <a href="#process">Process</a>
-  <a class="nav-btn" href="https://wa.me/91XXXXXXXXXX?text=Hi%20DP%20Glass%20%26%20Railing%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noopener">Get Quote</a>
+  <a href="index.html#process">Process</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20DP%20Glass%20%26%20Railing%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" style="color:var(--cyan)">WhatsApp Us →</a>
 </nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="kicker">Transparent Pricing</div>
+    <h1>Starting Prices</h1>
+    <p>Clear starting rates for our most popular glass and railing solutions. Final price depends on measurement, glass type and site conditions — get an exact quote on WhatsApp.</p>
+  </div>
+</section>
+
+<section class="pricing-section">
+  <div class="container">
+    <div class="pricing-grid">
+
+      <!-- Glass Railing -->
+      <div class="price-card featured">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="1"/><line x1="3" y1="11" x2="21" y2="11"/><line x1="9" y1="4" x2="9" y2="11"/><line x1="15" y1="4" x2="15" y2="11"/></svg>
+        </div>
+        <h3>Glass Railing</h3>
+        <p class="desc">Frameless & semi-frameless glass railing for balconies, staircases and terraces.</p>
+        <div class="price-tag"><span class="currency">₹</span><span class="amount">1,200</span><span class="unit">/ sq.ft</span></div>
+        <div class="price-note">Starting price • 12mm toughened glass</div>
+        <ul class="features">
+          <li>12mm toughened safety glass</li>
+          <li>SS 304/316 hardware</li>
+          <li>Frameless or semi-frameless</li>
+          <li>Custom sizes</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Glass%20Railing." target="_blank" rel="noopener">Get Exact Quote →</a>
+      </div>
+
+      <!-- SS Railing -->
+      <div class="price-card">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24"><line x1="4" y1="4" x2="4" y2="20"/><line x1="20" y1="4" x2="20" y2="20"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/></svg>
+        </div>
+        <h3>SS Railing</h3>
+        <p class="desc">Durable stainless-steel railing for staircases, balconies and terraces.</p>
+        <div class="price-tag"><span class="currency">₹</span><span class="amount">750</span><span class="unit">/ running ft</span></div>
+        <div class="price-note">Starting price • SS 304 grade</div>
+        <ul class="features">
+          <li>SS 304 / 316 options</li>
+          <li>Round, square or designer posts</li>
+          <li>Glass or rod infill</li>
+          <li>Powder-coated options</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20SS%20Railing." target="_blank" rel="noopener">Get Exact Quote →</a>
+      </div>
+
+      <!-- Glass Partition -->
+      <div class="price-card">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="12" y2="12"/></svg>
+        </div>
+        <h3>Glass Partition</h3>
+        <p class="desc">Elegant glass partitions for offices, shops, cabins and modern interiors.</p>
+        <div class="price-tag"><span class="currency">₹</span><span class="amount">950</span><span class="unit">/ sq.ft</span></div>
+        <div class="price-note">Starting price • 10–12mm toughened</div>
+        <ul class="features">
+          <li>10mm / 12mm toughened glass</li>
+          <li>Frameless or framed</li>
+          <li>Frosted / tinted options</li>
+          <li>Office & residential</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Glass%20Partition." target="_blank" rel="noopener">Get Exact Quote →</a>
+      </div>
+
+      <!-- Shower Glass -->
+      <div class="price-card">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><line x1="12" y1="3" x2="12" y2="14"/><circle cx="14" cy="9" r="1"/></svg>
+        </div>
+        <h3>Shower Glass</h3>
+        <p class="desc">Clean shower enclosures and fixed panels for modern bathrooms.</p>
+        <div class="price-tag"><span class="currency">₹</span><span class="amount">1,100</span><span class="unit">/ sq.ft</span></div>
+        <div class="price-note">Starting price • 8–10mm toughened</div>
+        <ul class="features">
+          <li>8mm / 10mm toughened glass</li>
+          <li>Fixed or hinged doors</li>
+          <li>Anti-water stain option</li>
+          <li>Chrome / black fittings</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Shower%20Glass." target="_blank" rel="noopener">Get Exact Quote →</a>
+      </div>
+
+      <!-- Balcony Railing -->
+      <div class="price-card">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><rect x="9" y="13" width="6" height="8"/></svg>
+        </div>
+        <h3>Balcony Railing</h3>
+        <p class="desc">Contemporary railing solutions designed for residential and commercial balconies.</p>
+        <div class="price-tag"><span class="currency">₹</span><span class="amount">850</span><span class="unit">/ running ft</span></div>
+        <div class="price-note">Starting price • glass or SS</div>
+        <ul class="features">
+          <li>Glass or SS options</li>
+          <li>Custom heights</li>
+          <li>Weather-resistant</li>
+          <li>Residential & commercial</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Balcony%20Railing." target="_blank" rel="noopener">Get Exact Quote →</a>
+      </div>
+
+      <!-- Terrace Railing -->
+      <div class="price-card">
+        <div class="price-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 21L12 3l10 18"/><line x1="6" y1="21" x2="6" y2="16"/><line x1="18" y1="21" x2="18" y2="16"/></svg>
+        </div>
+        <h3>Terrace Railing</h3>
+        <p class="desc">Stylish and strong railing for open terraces and rooftop spaces.</p>
+        <div class="price-tag"><span class="currency">₹</span><span class="amount">900</span><span class="unit">/ running ft</span></div>
+        <div class="price-note">Starting price • glass or SS</div>
+        <ul class="features">
+          <li>Glass or SS infill</li>
+          <li>Rust-resistant hardware</li>
+          <li>Designed for outdoor use</li>
+          <li>Custom fabrication</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20Terrace%20Railing." target="_blank" rel="noopener">Get Exact Quote →</a>
+      </div>
+
+      <!-- Custom -->
+      <div class="price-card" style="background:linear-gradient(135deg,#0a2941,#0b486b);color:#fff;border-color:transparent">
+        <div class="price-icon" style="background:rgba(255,255,255,.12);color:var(--cyan)">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+        </div>
+        <h3 style="color:#fff">Custom Project</h3>
+        <p class="desc" style="color:#c4d8e5">Large projects, commercial sites, or something unique — let's talk.</p>
+        <div class="price-tag"><span class="amount" style="color:#fff;font-size:32px">Custom</span></div>
+        <div class="price-note" style="color:#9fc0d6;border-color:rgba(255,255,255,.15)">Site visit + free consultation</div>
+        <ul class="features" style="color:#d4e5f0">
+          <li style="color:#d4e5f0">Bulk project pricing</li>
+          <li style="color:#d4e5f0">On-site measurement</li>
+          <li style="color:#d4e5f0">Dedicated support</li>
+          <li style="color:#d4e5f0">Commercial & residential</li>
+        </ul>
+        <a class="btn btn-wa" href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20have%20a%20custom%20project%20and%20would%20like%20a%20consultation." target="_blank" rel="noopener">Talk to Us on WhatsApp →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="compare-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Compare</div>
+      <h2>Quick Comparison</h2>
+      <p>Choose the right option for your space.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Service</th><th>Starting Price</th><th>Material</th><th>Best For</th><th>Lead Time</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Glass Railing</td><td>₹1,200 / sq.ft</td><td>12mm toughened glass</td><td><span class="badge badge-blue">Balcony, staircase</span></td><td>5–8 days</td></tr>
+          <tr><td>SS Railing</td><td>₹750 / running ft</td><td>SS 304 / 316</td><td><span class="badge badge-green">Staircase, balcony</span></td><td>4–7 days</td></tr>
+          <tr><td>Glass Partition</td><td>₹950 / sq.ft</td><td>10–12mm toughened glass</td><td><span class="badge badge-gold">Office, interiors</span></td><td>6–10 days</td></tr>
+          <tr><td>Shower Glass</td><td>₹1,100 / sq.ft</td><td>8–10mm toughened glass</td><td><span class="badge badge-blue">Bathroom</span></td><td>3–5 days</td></tr>
+          <tr><td>Balcony Railing</td><td>₹850 / running ft</td><td>Glass or SS</td><td><span class="badge badge-green">Residential</span></td><td>4–7 days</td></tr>
+          <tr><td>Terrace Railing</td><td>₹900 / running ft</td><td>Glass or SS</td><td><span class="badge badge-gold">Rooftop, terrace</span></td><td>4–7 days</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FACTORS -->
+<section class="factors">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Good to know</div>
+      <h2>What Affects the Final Price</h2>
+      <p>Starting prices are indicative. Your exact quote depends on a few key factors:</p>
+    </div>
+    <div class="factor-grid">
+      <div class="factor"><div class="factor-num">01</div><h3>Measurement</h3><p>Total running feet or square feet of the installation.</p></div>
+      <div class="factor"><div class="factor-num">02</div><h3>Glass Type</h3><p>Thickness, toughened vs laminated, tinted or clear.</p></div>
+      <div class="factor"><div class="factor-num">03</div><h3>Hardware Grade</h3><p>SS 304 vs SS 316, fittings, finish and design.</p></div>
+      <div class="factor"><div class="factor-num">04</div><h3>Site & Access</h3><p>Floor level, transportation and installation complexity.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">FAQ</div>
+      <h2>Pricing Questions</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-q">Are these prices final?<span class="plus">+</span></button>
+        <div class="faq-a"><p>These are starting prices. Your final price depends on exact measurement, glass type, hardware grade and site conditions. We provide an exact quote after a quick discussion on WhatsApp or a site visit.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you offer a free site visit?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes — we offer a free site visit and consultation within Udaipur city. For nearby areas, a small visit charge may apply which is adjusted in the final order.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What glass thickness do you recommend?<span class="plus">+</span></button>
+        <div class="faq-a"><p>For railings: 12mm toughened glass. For partitions: 10–12mm. For shower glass: 8–10mm. We recommend based on your site, usage and safety requirements.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does installation take?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Most residential installations are completed within 4–10 days from measurement, depending on the service and material availability. Large commercial projects may take longer.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you provide a warranty?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes — hardware carries a standard warranty and glass is guaranteed for manufacturing defects. Detailed warranty terms are shared in the final quote.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container wrap">
+    <div>
+      <h2>Need an exact quote?</h2>
+      <p>Share your measurements or site photos on WhatsApp — we'll reply with a clear, itemized quote.</p>
+    </div>
+    <a class="btn btn-wa" href="https://wa.me/91XXXXXXXXXX?text=Hi%20DP%20Glass%20%26%20Railing%2C%20I%27d%20like%20an%20exact%20quote." target="_blank" rel="noopener">Get Exact Quote on WhatsApp →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">DP GLASS & RAILING</div>
+        <p style="margin-top:8px">Modern glass and railing solutions in Udaipur, Rajasthan.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="index.html#services">Glass Railing</a>
+        <a href="index.html#services">SS Railing</a>
+        <a href="index.html#services">Glass Partition</a>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="index.html#about">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a>
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp Us</a>
+        <a href="#">Udaipur, Rajasthan</a>
+      </div>
+    </div>
+    <div class="copyright">© 2026 DP Glass & Railing • Udaipur, Rajasthan</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/91XXXXXXXXXX?text=Hi%20DP%20Glass%20%26%20Railing%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.4.1-.5.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.3 0-.4 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7 0 1.6 1.2 3.1 1.4 3.3.2.2 2.4 3.6 5.8 5.1.8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.7-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3.1 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3c-.9-1.4-1.4-3-1.4-4.6C3.6 7.3 7.3 3.6 12 3.6s8.4 3.7 8.4 8.4-3.8 8.2-8.4 8.2z"/></svg>
+</a>
+
+<script>
+// Mobile menu
+const mb = document.getElementById('mobileMenuBtn'), mn = document.getElementById('mobileNav');
+mb.addEventListener('click', () => { const o = mn.classList.toggle('open'); mb.textContent = o ? '✕' : '☰'; });
+mn.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mn.classList.remove('open'); mb.textContent = '☰'; }));
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
